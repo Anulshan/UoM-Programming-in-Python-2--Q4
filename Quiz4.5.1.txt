@@ -1,0 +1,33 @@
+import xml.etree.ElementTree as ET
+
+#root element
+root = ET.Element('tag1')
+
+#tag1 sub-elements
+tag2 = ET.SubElement(root, 'tag2')
+tag2.text = 'Animal'
+
+tag3 = ET.SubElement(root, 'tag3')
+tag3.text = 'Domestic'
+
+tag4 = ET.SubElement(root, 'tag4')
+
+#tag4 sub-elements
+tag41 = ET.SubElement(tag4, 'tag4.1')
+tag41.text = 'Cat'
+tag42 = ET.SubElement(tag4, 'tag4.2')
+tag42.text = 'Persian'
+
+#tag1 sub-elements
+tag5 = ET.SubElement(root, 'tag5')
+tag5.text = 'Iran'
+
+tag6 = ET.SubElement(root, 'tag6')
+tag6.text = 'Male'
+
+tag7 = ET.SubElement(root, 'tag7')
+tag7.text = '2021.05.04'
+
+#write to file
+tree = ET.ElementTree(root)
+ET.dump(tree)
